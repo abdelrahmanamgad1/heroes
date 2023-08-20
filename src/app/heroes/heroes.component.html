@@ -1,0 +1,15 @@
+<h2>My Heroes</h2>
+
+<div class="input-group mb-3">
+  <label>Hero name:</label>
+  <input type="text" class="form-control" [(ngModel)]="inputName" />
+</div>
+<button class="btn btn-primary" (click)="addHero()">Add Hero</button>
+
+<div *ngFor="let hero of heroService.heroes">
+  <div class="card" style="width: 18rem">
+    <div class="card-header">
+     <button routerLink="/heroes/{{hero.id}}"  class="btn">{{ hero.id }} {{ hero.name }}</button> <button class="btn btn-primary" (click)="removeHero(hero.id)">X</button>
+    </div>
+  </div>
+</div>

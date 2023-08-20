@@ -1,0 +1,25 @@
+<h2>Top Heroes</h2>
+
+<div class="container">
+  <button
+    class="btn btn-danger btn-md"
+    *ngFor="let hero of heroService.heroes | slice : 1 : 5"
+  >
+    {{ hero.name }}
+  </button>
+</div>
+
+<div class="input-group mb-3">
+  <label>Hero Search</label>
+  <input type="text" class="form-control" [(ngModel)]="searchText" />
+</div>
+<div class="dropdown">
+  <ul class="list-group">
+    <li
+      class="list-group-item"
+      *ngFor="let item of heroService.heroes | filterPipe : searchText"
+    >
+      {{ item.name }}
+    </li>
+  </ul>
+</div>

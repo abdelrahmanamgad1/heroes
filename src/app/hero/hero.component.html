@@ -1,0 +1,10 @@
+<div>
+  <h2>{{ hero.name }} Details</h2>
+  <div><span>id: </span>{{ hero.id }}</div>
+  <div>
+    <label>Hero name: </label>
+    <input [(ngModel)]="hero.name" />
+  </div>
+  <button type="button" routerLink="/dashboard">go back</button>
+  <button type="button" (click)="editName(hero.name)">save</button>
+</div>
